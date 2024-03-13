@@ -1,0 +1,20 @@
+.productCard{
+    display: flex;
+    flex-direction: column;
+flex-basis: 30%;
+}
+.productPic{
+width:110px;
+height: auto;
+}
+.productDescribtion{
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+}
+.productName{
+
+}
+.productPrice{
+
+}

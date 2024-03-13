@@ -1,12 +1,18 @@
 import React from 'react'
+import styles from './Card.module.css'
 
 const Card = (props) => {
-  const product=props.product
+  const products=props.product
     
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <h1>{product.price}$</h1>
+    <div className={`${styles.productCard}`}>
+      <div className={`${styles.productPic}`}>
+        <img src={products.indexImageUrl}/>
+      </div>
+      <div className={`${styles.productDescribtion}`}>
+        <span className={`${styles.productName}`}>{products.name}</span>
+        <span className={`${styles.productPrice}`}>{products.price}</span>
+      </div>
     </div>
   )
 }

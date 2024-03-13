@@ -1,0 +1,13 @@
+.countries{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+.countryFlag{
+flex-basis: 15%;
+}
+.countryLink{
+    text-decoration: none;
+}

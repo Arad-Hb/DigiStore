@@ -1,33 +1,46 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Card from './Card'
 import Loading from './Loading'
+import { useDispatch, useSelector } from 'react-redux'
+import { recieveProductsFromAPI } from '../redux/productsActions'
+import Categories from './Categories'
+import Register from './Register'
 
 const MainContent = () => {
-  const [isLoading,setIsLoading]=useState(false)
-  const [products,setProducts]=useState([])
-
-  const getProducts=async ()=>{
-  const response=await fetch("http://localhost:9095/products")
-  const jsonBody=await response.json()
-  setProducts(jsonBody)
-  setIsLoading(true)
-}
-useEffect(()=>{
-  setTimeout(()=>{
-    getProducts()
-  },3000)
+  const productsData=useSelector(state=>state.products)
+  const registerData=useSelector(state=>state.register)
+  const dispatch=useDispatch()
   
-},[])
+  useEffect(()=>{
+    dispatch(recieveProductsFromAPI())
+  },[])
 
-  return !isLoading?<Loading/>:
-  (
-    <div>
-        {products.map(item=>{
-          return <div><Card key={item.id} product={item}/></div>
-            
+
+  if(productsData.isLoading===true){
+    return <Loading/>
+  }
+  if(productsData.error.length!==0){
+    return <h1>{productsData.error}</h1>
+  }
+  if(registerData.isRegister===true){
+    return <Register/>
+  }
+
+  return(
+    <>
+    <Categories/>
+    <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
+        {productsData.products.map(item=>{
+          return(
+            <div key={item.id}>
+              <div style={{width:'150px'}}><Card key={item.id} product={item}/></div>
+            </div>
+          )
         })
       }
     </div>
+    </>
+    
   )
 }
 

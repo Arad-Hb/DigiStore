@@ -1,0 +1,78 @@
+.footerHead{
+    width: 100%;
+    text-align: center;
+}
+.footerHeadLink{
+    text-decoration: none;
+    
+}
+.footerHeadLogo{}
+.footerMain{
+    display: flex;
+    flex-direction: column;
+}
+.footerMainLogo{}
+.footerMainPic{}
+.footerContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footerPayment{
+    flex-basis: 25%;
+}
+.footerPaymentItem{
+    width:80px;
+    height: 60px;
+    background-color: silver;
+    margin: 5px 5px;
+    border-radius: 7px;
+}
+.footerPaymentLink{
+    text-decoration: none;
+   
+}
+.footerPaymentPic{
+    width: 60%;
+   padding:15px;
+}
+.footerPolicy{
+    flex-basis: 25%;
+}
+.footerPolicyLink{
+    color: black;
+}
+.footerWarranty{
+    flex-basis: 25%;
+}
+.footerWarrantyLink{
+    color: black;
+}
+.footerContact{
+    flex-basis: 25%;
+}
+.footerContactTitle{}
+.footerContactLink{
+    color: black;
+}
+.footerContactIcons{}
+.footerEnd{
+    background-color: rgb(98, 98, 101);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 30px 5px;
+}
+.footerEndLink{
+    color: red;
+}
+.footerList{
+    list-style: none;
+}
+.footerPaymentList{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
